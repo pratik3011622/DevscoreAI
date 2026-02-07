@@ -1,6 +1,6 @@
 import AuthService from './AuthService';
 
-const API_BASE_URL = 'http://localhost:8080/api/recruiter';
+const API_BASE_URL = 'https://ai-assessment-platform.onrender.com/api/recruiter';
 
 const RecruiterService = {
     /**
