@@ -7,10 +7,9 @@ const FeatureCard = ({ feature, index }) => (
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: index * 0.1, duration: 0.5 }}
-        whileHover={{ scale: 1.05, boxShadow: "0 0 30px -5px rgba(139, 92, 246, 0.3)" }}
-        className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl group hover:bg-white/10 transition-colors"
+        className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl"
     >
-        <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+        <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-4`}>
             <feature.icon className="text-white" size={24} />
         </div>
         <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>

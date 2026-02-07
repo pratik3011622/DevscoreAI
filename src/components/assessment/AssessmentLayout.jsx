@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { AlertTriangle, Mic, Code, BrainCircuit, CheckCircle, FileText, Lock } from 'lucide-react';
+import { AlertTriangle, Mic, Code, BrainCircuit, CheckCircle, FileText, Lock, ArrowLeft } from 'lucide-react';
 import OrbitingProctor from './OrbitingProctor';
 import CodeSanctuary from './CodeSanctuary';
 import MCQSession from './MCQSession';
@@ -93,6 +93,23 @@ const AssessmentLayout = () => {
             <DataCore />
             <ComplianceBanner />
             <OrbitingProctor onAnomaly={triggerAnomaly} />
+
+            {/* Back to browsing button */}
+            <div className="fixed top-6 left-6 z-50">
+                <button
+                    onClick={() => {
+                        if (window.history.length > 1) {
+                            window.history.back();
+                        } else {
+                            window.location.href = '/';
+                        }
+                    }}
+                    className="flex items-center space-x-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 transition-colors"
+                >
+                    <ArrowLeft size={18} />
+                    <span>Back to browsing</span>
+                </button>
+            </div>
 
             {/* Anomaly Overlay */}
             <AnimatePresence>

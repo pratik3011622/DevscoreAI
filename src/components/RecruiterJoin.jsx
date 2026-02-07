@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Check, Shield, ArrowRight } from 'lucide-react';
+import { ShieldCheck, ArrowRight, Check } from 'lucide-react';
 
-const CandidateLogin = ({ onLogin, onSwitchToJoin }) => {
+const RecruiterJoin = ({ onJoin, onSwitchToLogin }) => {
     const [isLoading, setIsLoading] = useState(false);
-    const [isVerified, setIsVerified] = useState(false);
+    const [isSuccess, setIsSuccess] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsLoading(true);
-        // Simulate API check
+        // Simulate API call
         setTimeout(() => {
             setIsLoading(false);
-            setIsVerified(true);
-            // Wait for verify animation then login
-            setTimeout(onLogin, 1500);
+            setIsSuccess(true);
+            setTimeout(onJoin, 1500);
         }, 1500);
     };
 
@@ -28,7 +27,7 @@ const CandidateLogin = ({ onLogin, onSwitchToJoin }) => {
                 <div className="relative bg-[#0A0A0A] rounded-xl border border-white/10 p-8 shadow-xl">
                     <div className="text-center mb-8">
                         <div className="w-14 h-14 bg-[#1A1A2E] rounded-lg flex items-center justify-center mx-auto mb-4 border border-white/10">
-                            {isVerified ? (
+                            {isSuccess ? (
                                 <motion.div
                                     initial={{ scale: 0 }}
                                     animate={{ scale: 1 }}
@@ -37,20 +36,32 @@ const CandidateLogin = ({ onLogin, onSwitchToJoin }) => {
                                     <Check className="text-black" size={20} strokeWidth={3} />
                                 </motion.div>
                             ) : (
-                                <Shield className="text-white" size={28} />
+                                <ShieldCheck className="text-white" size={28} />
                             )}
                         </div>
                         <h2 className="text-2xl font-semibold text-white">
-                            Candidate Access
+                            Join as Recruiter
                         </h2>
-                        <p className="text-gray-500 text-sm mt-1">Sign in to your account</p>
+                        <p className="text-gray-500 text-sm mt-1">Create your account</p>
                     </div>
 
                     <form onSubmit={handleSubmit} className="space-y-4">
                         <div className="space-y-4">
                             <input
+                                type="text"
+                                placeholder="Full Name"
+                                className="w-full bg-[#1A1A2E] border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:border-opacity-50 transition-colors"
+                                required
+                            />
+                            <input
                                 type="email"
-                                placeholder="Email ID"
+                                placeholder="Official Email ID"
+                                className="w-full bg-[#1A1A2E] border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:border-opacity-50 transition-colors"
+                                required
+                            />
+                            <input
+                                type="text"
+                                placeholder="Company Name"
                                 className="w-full bg-[#1A1A2E] border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:border-opacity-50 transition-colors"
                                 required
                             />
@@ -64,20 +75,20 @@ const CandidateLogin = ({ onLogin, onSwitchToJoin }) => {
 
                         <button
                             type="submit"
-                            disabled={isLoading || isVerified}
+                            disabled={isLoading || isSuccess}
                             className={`w-full py-3 rounded-lg font-medium flex items-center justify-center space-x-2 transition-all duration-300
-                            ${isVerified
+                            ${isSuccess
                                     ? 'bg-green-500 text-black'
                                     : 'bg-white text-black hover:bg-gray-100'
                                 }`}
                         >
                             {isLoading ? (
                                 <span className="w-5 h-5 border-2 border-black/30 border-t-black rounded-full animate-spin"></span>
-                            ) : isVerified ? (
-                                <span>Access Granted</span>
+                            ) : isSuccess ? (
+                                <span>Account Created</span>
                             ) : (
                                 <>
-                                    <span>Sign In</span>
+                                    <span>Join Now</span>
                                     <ArrowRight size={18} />
                                 </>
                             )}
@@ -86,14 +97,18 @@ const CandidateLogin = ({ onLogin, onSwitchToJoin }) => {
 
                     <div className="mt-6 text-center">
                         <p className="text-gray-500 text-sm">
-                            Don't have an account?{' '}
+                            Already have an account?{' '}
                             <button
-                                onClick={onSwitchToJoin}
+                                onClick={onSwitchToLogin}
                                 className="text-purple-400 hover:text-purple-300"
                             >
-                                Join Now
+                                Sign In
                             </button>
                         </p>
+                    </div>
+
+                    <div className="mt-4 text-center text-xs text-gray-600">
+                        Secure • Encrypted • Verified
                     </div>
                 </div>
             </motion.div>
@@ -101,4 +116,4 @@ const CandidateLogin = ({ onLogin, onSwitchToJoin }) => {
     );
 };
 
-export default CandidateLogin;
+export default RecruiterJoin;

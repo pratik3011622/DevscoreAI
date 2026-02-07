@@ -11,7 +11,7 @@ const ScoreItem = ({ label, score, weight, icon: Icon, color }) => (
                 <div className="group relative">
                     <Info size={12} className="text-gray-500 cursor-help" />
                     <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 bg-black/90 border border-white/10 p-2 rounded-lg text-xs text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50">
-                        Contributes {weight}% to your total SkillRank.
+                        Contributes {weight}% to your total DevScore.
                     </div>
                 </div>
             </div>
@@ -72,7 +72,7 @@ const ScoreBreakdown = () => {
             </div>
 
             <div className="mt-6 pt-4 border-t border-white/10 text-xs text-gray-500 leading-relaxed">
-                <strong className="text-gray-400">Why this breakdown?</strong> SkillRank AI analyzes your code efficiency, pattern usage, and test integrity to generate a fair, unbiased score. Proctored Integrity impacts your credibility but not your technical rank.
+                <strong className="text-gray-400">Why this breakdown?</strong> DevScoreAI analyzes your code efficiency, pattern usage, and test integrity to generate a fair, unbiased score. Proctored Integrity impacts your credibility but not your technical rank.
             </div>
         </div>
     );

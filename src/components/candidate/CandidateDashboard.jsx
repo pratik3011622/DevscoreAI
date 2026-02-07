@@ -10,9 +10,6 @@ const DashboardModule = ({ children, className, delay = 0 }) => (
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay, duration: 0.6 }}
         whileHover={{
-            scale: 1.02,
-            rotateX: 2,
-            rotateY: 2,
             boxShadow: "0 0 30px -5px rgba(139, 92, 246, 0.2)"
         }}
         className={`bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 relative overflow-hidden group transition-all ${className}`}
@@ -59,7 +56,7 @@ const CandidateDashboard = ({ onLogout }) => {
 
                         <div className="space-y-4 flex-1 overflow-y-auto pr-2 custom-scrollbar">
                             {[
-                                { role: "Senior Engineer", company: "SkillRank AI", status: "Test Ready", color: "text-purple-400 border-purple-500/30 bg-purple-500/10" },
+                                { role: "Senior Engineer", company: "DevScoreAI", status: "Test Ready", color: "text-purple-400 border-purple-500/30 bg-purple-500/10" },
                                 { role: "ML Architect", company: "NeuralNet", status: "Processing", color: "text-blue-400 border-blue-500/30 bg-blue-500/10" },
                                 { role: "Frontend Lead", company: "Vercel", status: "Applied", color: "text-gray-400 border-gray-500/30 bg-gray-500/10" },
                             ].map((job, i) => (

@@ -7,7 +7,7 @@ const AntiGravityCard = ({ children, className }) => {
         <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            whileHover={{ y: 0, scale: 1.01, transition: { duration: 0.3 } }}
+            whileHover={{ y: 0, transition: { duration: 0.3 } }}
             className={className}
         >
             {children}
@@ -112,7 +112,7 @@ const CreateAssignmentModal = ({ isOpen, onClose }) => {
     const generateLink = () => {
         setStep(4);
         setTimeout(() => {
-            setGeneratedLink(`https://skillrank.ai/test/${Math.random().toString(36).substr(2, 9)}`);
+            setGeneratedLink(`https://devscore.ai/test/${Math.random().toString(36).substr(2, 9)}`);
         }, 1500);
     };
 
@@ -331,8 +331,8 @@ const CreateAssignmentModal = ({ isOpen, onClose }) => {
                             onClick={step === 3 ? generateLink : () => setStep(step + 1)}
                             disabled={isScanning}
                             className={`px-8 py-3 rounded-xl font-bold flex items-center transition-all ${isScanning
-                                    ? 'bg-gray-800 text-gray-500 cursor-not-allowed'
-                                    : 'bg-white text-black hover:bg-gray-100 hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.3)]'
+                                ? 'bg-gray-800 text-gray-500 cursor-not-allowed'
+                                : 'bg-white text-black hover:bg-gray-100 shadow-[0_0_20px_rgba(255,255,255,0.3)]'
                                 }`}
                         >
                             {step === 3 ? 'Launch Portal' : 'Next Step'}
