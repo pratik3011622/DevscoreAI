@@ -19,7 +19,7 @@ const Navbar = ({ onLogin, onJoin, onNavigate }) => {
         >
             {/* Logo - shifted to leftmost */}
             <div className="absolute left-0 pl-4 lg:pl-8 pt-2 lg:pt-3 cursor-pointer">
-                <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400">
+                <span className="text-2xl font-bold text-white">
                     DevScoreAI
                 </span>
             </div>

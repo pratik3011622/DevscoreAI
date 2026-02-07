@@ -106,7 +106,7 @@ const DashboardLayout = ({ onLogout }) => {
                 >
                     {isMenuOpen ? <X size={28} className="text-white" /> : <Menu size={28} className="text-white" />}
                 </button>
-                <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+                <h2 className="text-2xl font-bold text-white">
                     Recruiter
                 </h2>
 

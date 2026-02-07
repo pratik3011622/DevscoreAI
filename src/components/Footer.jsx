@@ -7,7 +7,7 @@ const Footer = ({ onNavigate }) => {
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-6">
                 {/* Brand */}
                 <div className="space-y-4">
-                    <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+                    <h3 className="text-2xl font-bold text-white">
                         DevScoreAI
                     </h3>
                     <p className="text-gray-400 text-sm leading-relaxed">
