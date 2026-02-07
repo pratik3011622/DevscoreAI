@@ -73,10 +73,10 @@ const Contact = () => {
                             <p className="text-gray-400 mb-4">
                                 For company partnerships and recruiter access, please reach out via your official company email.
                             </p>
-                            <button className="w-full py-3 rounded-lg bg-white text-black font-medium flex items-center justify-center hover:bg-gray-200 transition-colors">
+                            <a href="mailto:partnerships@devscoreai.com" className="w-full py-3 rounded-lg bg-white text-black font-medium flex items-center justify-center hover:bg-gray-200 transition-colors">
                                 <Send size={16} className="mr-2" />
                                 Send Email
-                            </button>
+                            </a>
                         </motion.div>
 
                         {/* Support */}
@@ -98,10 +98,10 @@ const Contact = () => {
                             <p className="text-gray-400 mb-4">
                                 For technical issues regarding test access, camera permissions, or dashboard navigation.
                             </p>
-                            <button className="w-full py-3 rounded-lg bg-white text-black font-medium flex items-center justify-center hover:bg-gray-200 transition-colors">
+                            <a href="mailto:support@devscoreai.com" className="w-full py-3 rounded-lg bg-white text-black font-medium flex items-center justify-center hover:bg-gray-200 transition-colors">
                                 <MessageCircle size={16} className="mr-2" />
                                 Get Help
-                            </button>
+                            </a>
                         </motion.div>
 
                         {/* Feedback */}
@@ -123,10 +123,10 @@ const Contact = () => {
                             <p className="text-gray-400 mb-4">
                                 We value your input on test experience, platform usability, and evaluation fairness.
                             </p>
-                            <button className="w-full py-3 rounded-lg bg-white text-black font-medium flex items-center justify-center hover:bg-gray-200 transition-colors">
+                            <a href="mailto:feedback@devscoreai.com" className="w-full py-3 rounded-lg bg-white text-black font-medium flex items-center justify-center hover:bg-gray-200 transition-colors">
                                 <MessageCircle size={16} className="mr-2" />
                                 Share Feedback
-                            </button>
+                            </a>
                         </motion.div>
                     </div>
                 </motion.section>
@@ -160,33 +160,15 @@ const Contact = () => {
                     </div>
                 </motion.section>
 
-                {/* Quick Links */}
+                {/* Copyright */}
                 <motion.section
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.8 }}
                 >
-                    <div className="bg-gradient-to-r from-purple-500/10 to-cyan-500/10 border border-white/10 rounded-2xl p-8 backdrop-blur-xl">
-                        <div className="flex flex-wrap justify-center gap-8">
-                            {[
-                                { label: 'Home', href: '#' },
-                                { label: 'About Us', href: '#' },
-                                { label: 'Privacy Policy', href: '#' },
-                                { label: 'Terms of Service', href: '#' },
-                                { label: 'Careers', href: '#' },
-                            ].map((link, idx) => (
-                                <button
-                                    key={idx}
-                                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                                >
-                                    {link.label}
-                                </button>
-                            ))}
-                        </div>
-                        <p className="text-center text-gray-600 text-sm mt-6">
-                            © {new Date().getFullYear()} CODEVERSITY. All rights reserved.
-                        </p>
-                    </div>
+                    <p className="text-center text-gray-600 text-sm">
+                        © {new Date().getFullYear()} DevScoreAI. All rights reserved.
+                    </p>
                 </motion.section>
             </motion.div>
         </div>

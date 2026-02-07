@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, MapPin, Linkedin, Twitter, Github, Code2 } from 'lucide-react';
+import { Mail, MessageCircle, HelpCircle, Linkedin, Twitter, Github, Code2 } from 'lucide-react';
 
 const Footer = ({ onNavigate }) => {
     return (
@@ -57,17 +57,23 @@ const Footer = ({ onNavigate }) => {
                 <div>
                     <h4 className="text-white font-semibold mb-4">Contact Us</h4>
                     <ul className="space-y-3 text-sm text-gray-400">
-                        <li className="flex items-center space-x-2">
-                            <Mail size={16} />
-                            <span>support@devscoreai.com</span>
+                        <li>
+                            <a href="mailto:partnerships@devscoreai.com" className="flex items-center space-x-2 hover:text-white transition-colors">
+                                <Mail size={16} />
+                                <span>Send Email</span>
+                            </a>
                         </li>
-                        <li className="flex items-center space-x-2">
-                            <Phone size={16} />
-                            <span>+1 (555) 123-4567</span>
+                        <li>
+                            <a href="mailto:support@devscoreai.com" className="flex items-center space-x-2 hover:text-white transition-colors">
+                                <HelpCircle size={16} />
+                                <span>Get Help</span>
+                            </a>
                         </li>
-                        <li className="flex items-start space-x-2">
-                            <MapPin size={16} className="mt-0.5" />
-                            <span>123 Tech Park Drive, San Francisco, CA 94107</span>
+                        <li>
+                            <a href="mailto:feedback@devscoreai.com" className="flex items-center space-x-2 hover:text-white transition-colors">
+                                <MessageCircle size={16} />
+                                <span>Share Feedback</span>
+                            </a>
                         </li>
                     </ul>
                 </div>
